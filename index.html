@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutoring Intermediary Website</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
 </head>
 <body>
     <header>
@@ -24,15 +25,30 @@
         <section id="introduction">
             <h2>Welcome to Our Tutoring Service</h2>
             <p>Your one-stop solution for finding the best tutors and courses.</p>
+            <img src="images/intro.jpg" alt="Tutoring Service">
         </section>
         <section id="search">
             <h2>Find Your Tutor or Course</h2>
-            <input type="text" placeholder="Search by subject, grade, location...">
-            <button>Search</button>
+            <input type="text" id="search-input" placeholder="Search by subject, grade, location...">
+            <button id="search-button">Search</button>
         </section>
         <section id="popular">
             <h2>Popular Courses and Tutors</h2>
-            <!-- Placeholder for popular courses/tutors -->
+            <div class="card">
+                <img src="images/course1.jpg" alt="Course 1">
+                <div class="card-content">
+                    <h3>Mathematics for Grade 10</h3>
+                    <p>by John Doe</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/course2.jpg" alt="Course 2">
+                <div class="card-content">
+                    <h3>Physics for Grade 12</h3>
+                    <p>by Jane Smith</p>
+                </div>
+            </div>
+            <!-- 更多的課程和老師 -->
         </section>
     </main>
     <footer>
