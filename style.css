@@ -19,6 +19,8 @@ header h1 {
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -39,13 +41,14 @@ section {
     margin-bottom: 2em;
 }
 
-input[type="text"] {
+#search input[type="text"], #payment-form input[type="text"], form input[type="email"], form input[type="password"], form input[type="text"], form textarea {
     padding: 0.5em;
     width: 70%;
     margin-right: 1em;
+    margin-bottom: 1em;
 }
 
-button {
+#search button, button {
     padding: 0.5em 1em;
     background-color: #333;
     color: #fff;
@@ -66,3 +69,31 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+.card, .course, .tutor {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card img, .course img, .tutor img {
+    max-width: 150px;
+    margin-right: 1em;
+}
+
+.card-content, .course-info, .tutor-info {
+    flex-grow: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form textarea {
+    resize: vertical;
+}
+
