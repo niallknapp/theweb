@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Awesome Blog - Full Post</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Premium Carbide End Mills | CuttingEdge Tools</title>
+    <meta name="description" content="High-quality carbide end mills for precision machining. Explore our range of durable and efficient cutting tools.">
     <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ffc107;
+            --text-color: #333;
+            --light-text-color: #fff;
+        }
         * {
             box-sizing: border-box;
             margin: 0;
@@ -14,305 +21,315 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            background-color: #ffffff;
-            color: #333;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-            padding: 0 20px;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
         }
         header {
-            background: #ffffff;
-            color: #333;
-            padding: 1rem 0;
-            border-bottom: #e8491d 3px solid;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-        header .container {
+        .nav-toggle {
+            display: none;
+        }
+        nav ul {
+            list-style-type: none;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            justify-content: center;
         }
-        header a {
-            color: #333;
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: var(--light-text-color);
             text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header .branding h1 {
-            font-size: 1.5rem;
-        }
-        header nav ul {
-            display: flex;
-            list-style: none;
-        }
-        header nav ul li {
-            margin-left: 20px;
-        }
-        header .highlight, header .current a {
-            color: #e8491d;
             font-weight: bold;
+            transition: color 0.3s ease;
         }
-        header a:hover {
-            color: #e8491d;
+        nav ul li a:hover {
+            color: var(--accent-color);
         }
-        .content-wrapper {
+        main {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 20px;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.8)), url('/api/placeholder/1200/400');
+            background-size: cover;
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #e0a800;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-info h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        .contact-methods {
             display: flex;
+            justify-content: space-around;
             flex-wrap: wrap;
-            justify-content: space-between;
-            margin-top: 20px;
+            margin-top: 2rem;
         }
-        #main {
-            flex: 2;
-            min-width: 0;
-        }
-        #sidebar {
-            flex: 1;
-            background: #f4f4f4;
-            color: #333;
+        .contact-method {
+            text-align: center;
+            margin: 20px;
             padding: 20px;
-            margin-left: 20px;
-            border-radius: 5px;
-            min-width: 250px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            flex-basis: calc(50% - 40px);
         }
-        .post {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 5px;
+        .contact-method:hover {
+            transform: scale(1.05);
         }
-        
-        .post img {
-            
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        
-        .post-meta {
-            background: #f9f9f9;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-        }
-        .post-meta span {
-            margin-right: 10px;
-        }
-        .comments {
-            margin-top: 20px;
-        }
-        .comment {
-            background-color: #f9f9f9;
-            padding: 15px;
-            margin-top: 10px;
-            border: 1px solid #eee;
-            border-radius: 5px;
-        }
-        .social-share {
-            margin-top: 20px;
-        }
-        .social-share a {
-            margin-right: 10px;
-            color: #333;
-            font-size: 20px;
+        .contact-method img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
         }
         footer {
-            padding: 20px 0;
-            margin-top: 20px;
-            color: #ffffff;
-            background-color: #e8491d;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
             text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
         }
-        #commentForm {
-            margin-top: 20px;
-        }
-        #commentForm textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        #commentForm button {
-            background-color: #e8491d;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        #commentForm button:hover {
-            background-color: #d13d0f;
-        }
-        .related-posts {
-            margin-top: 20px;
-        }
-        .related-post {
-            margin-bottom: 10px;
-        }
-        .related-post a {
-            color: #333;
-            text-decoration: none;
-        }
-        .related-post a:hover {
-            color: #e8491d;
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 768px) {
-            header .container {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            header nav {
-                margin-top: 10px;
-            }
-            header nav ul {
-                flex-direction: column;
-            }
-            header nav ul li {
-                margin: 10px 0 0 0;
-            }
-            .content-wrapper {
-                flex-direction: column;
-            }
-            #main, #sidebar {
-                width: 100%;
-            }
-            #sidebar {
-                margin-left: 0;
-                margin-top: 20px;
-            }
-            .post-meta span {
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .nav-toggle {
                 display: block;
-                margin-bottom: 5px;
+                background: none;
+                border: none;
+                color: var(--light-text-color);
+                font-size: 1.5em;
+                cursor: pointer;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: var(--primary-color);
+            }
+            nav ul.show {
+                display: flex;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .hero h1 {
+                font-size: 2em;
+            }
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            .contact-method {
+                flex-basis: 100%;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .hero {
+                padding: 60px 20px;
+            }
+            .hero h1 {
+                font-size: 1.5em;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div id="branding">
-                <h1><i class="fas fa-blog"></i> <span class="highlight">My</span> Awesome Blog</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <button class="nav-toggle">☰</button>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container">
-        <div class="content-wrapper">
-            <div id="main">
-                <article class="post">
-                    <h2>The Future of Artificial Intelligence</h2>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar-alt"></i> June 22, 2024</span>
-                        <span><i class="far fa-user"></i> John Doe</span>
-                        <span><i class="far fa-folder"></i> Technology</span>
-                    </div>
-                    <img src="https://axenehp.com/wp-content/uploads/2019/02/20190225_header.jpg" alt="AI concept image">
-                    <p>Artificial Intelligence (AI) is rapidly evolving, transforming industries and reshaping our daily lives. From self-driving cars to advanced medical diagnostics, AI is pushing the boundaries of what's possible...</p>
-                    <p>As we look to the future, ethical considerations and responsible development will be crucial in harnessing the full potential of AI while mitigating potential risks...</p>
-                    
-                    <div class="social-share">
-                        <a href="#" onclick="sharePost('facebook')"><i class="fab fa-facebook"></i></a>
-                        <a href="#" onclick="sharePost('twitter')"><i class="fab fa-twitter"></i></a>
-                        <a href="#" onclick="sharePost('linkedin')"><i class="fab fa-linkedin"></i></a>
-                    </div>
+    <main>
+        <section id="home" class="hero">
+            <h1>Precision Carbide End Mills</h1>
+            <p>Elevate your machining with our high-performance tools</p>
+            <a href="#products" class="cta-button">Explore Our Products</a>
+        </section>
 
-                    <div class="comments">
-                        <h3>Comments</h3>
-                        <div id="commentList">
-                            <!-- Comments will be dynamically added here -->
-                        </div>
-                        <form id="commentForm">
-                            <textarea id="commentText" placeholder="Leave a comment" required></textarea>
-                            <button type="submit">Post Comment</button>
-                        </form>
-                    </div>
-                </article>
-            </div>
-
-            <aside id="sidebar">
-                <div class="related-posts">
-                    <h3>Related Posts</h3>
-                    <div class="related-post">
-                        <a href="#">Machine Learning Basics</a>
-                    </div>
-                    <div class="related-post">
-                        <a href="#">Ethics in AI Development</a>
-                    </div>
-                    <div class="related-post">
-                        <a href="#">AI in Healthcare</a>
+        <section id="products">
+            <h2>Our Premium End Mills</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://www.icarbide.com/wp-content/uploads/2020/08/aluminum-coated-3flute-carbide-end-mill-3.jpg" alt="2-Flute Carbide End Mill">
+                    <div class="product-info">
+                        <h3>2-Flute Carbide End Mill</h3>
+                        <p>Ideal for side and slot milling in various materials.</p>
+                        <a href="#" class="cta-button">Learn More</a>
                     </div>
                 </div>
-            </aside>
-        </div>
-    </div>
+                <div class="product-card">
+                    <img src="https://www.icarbide.com/wp-content/uploads/2020/08/aluminum-coated-3flute-carbide-end-mill-3.jpg" alt="4-Flute Carbide End Mill">
+                    <div class="product-info">
+                        <h3>4-Flute Carbide End Mill</h3>
+                        <p>Perfect for finishing operations and light roughing.</p>
+                        <a href="#" class="cta-button">Learn More</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://www.shop-apt.co.uk/user/products/large/ES4S-4-FLUTE-CARBIDE-END-MILL-FOR-STAINLESS-8MM-58HRC.jpg" alt="Ball Nose Carbide End Mill">
+                    <div class="product-info">
+                        <h3>Ball Nose Carbide End Mill</h3>
+                        <p>Designed for 3D contouring and surface finishing.</p>
+                        <a href="#" class="cta-button">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About CuttingEdge Tools</h2>
+            <p>At CuttingEdge Tools, we specialize in manufacturing high-quality carbide end mills for various industries. Our tools are known for their precision, durability, and exceptional performance. With years of experience and a commitment to innovation, we deliver cutting-edge solutions for all your machining needs.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>Our experts are ready to assist you. Choose your preferred method of communication:</p>
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <img src="/api/placeholder/60/60" alt="WhatsApp Icon">
+                    <h3>WhatsApp</h3>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="contact-method">
+                    <img src="/api/placeholder/60/60" alt="Email Icon">
+                    <h3>Email</h3>
+                    <p>info@cuttingedgetools.com</p>
+                </div>
+                <div class="contact-method">
+                    <img src="/api/placeholder/60/60" alt="WeChat Icon">
+                    <h3>WeChat</h3>
+                    <p>CuttingEdgeToolsWC</p>
+                </div>
+                <div class="contact-method">
+                    <img src="/api/placeholder/60/60" alt="LINE Icon">
+                    <h3>LINE</h3>
+                    <p>@cuttingedgetools</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>My Awesome Blog &copy; 2024</p>
+        <p>&copy; 2024 CuttingEdge Tools. All rights reserved.</p>
     </footer>
 
     <script>
-        // Function to handle social media sharing
-        function sharePost(platform) {
-            const postUrl = encodeURIComponent(window.location.href);
-            const postTitle = encodeURIComponent(document.title);
-            let shareUrl;
-
-            switch(platform) {
-                case 'facebook':
-                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${postUrl}`;
-                    break;
-                case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?url=${postUrl}&text=${postTitle}`;
-                    break;
-                case 'linkedin':
-                    shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${postUrl}&title=${postTitle}`;
-                    break;
-            }
-
-            window.open(shareUrl, '_blank');
-        }
-
-        // Function to add a new comment
-        function addComment(text) {
-            const commentList = document.getElementById('commentList');
-            const newComment = document.createElement('div');
-            newComment.className = 'comment';
-            newComment.innerHTML = `
-                <p>${text}</p>
-                <small>Posted on ${new Date().toLocaleString()}</small>
-            `;
-            commentList.appendChild(newComment);
-        }
-
-        // Event listener for comment form submission
-        document.getElementById('commentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const commentText = document.getElementById('commentText').value;
-            if (commentText.trim() !== '') {
-                addComment(commentText);
-                document.getElementById('commentText').value = '';
-            }
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
 
-        // Simulate loading existing comments
-        addComment("Great article! I'm excited to see how AI will shape our future.");
-        addComment("Interesting points about ethical considerations. We need to be cautious as we advance AI technologies.");
+        // Add animation to product cards on scroll
+        const productCards = document.querySelectorAll('.product-card');
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        productCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('nav ul');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+
+        // Close mobile menu when a link is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+
+        // Add analytics code here
+        console.log('Analytics code would be placed here');
     </script>
 </body>
 </html>
