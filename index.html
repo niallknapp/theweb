@@ -3,54 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutoring Intermediary Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts.js"></script>
+    <title>My Awesome Blog - Full Post</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+        header {
+            background: #ffffff;
+            color: #333;
+            padding: 1rem 0;
+            border-bottom: #e8491d 3px solid;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        header a {
+            color: #333;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header .branding h1 {
+            font-size: 1.5rem;
+        }
+        header nav ul {
+            display: flex;
+            list-style: none;
+        }
+        header nav ul li {
+            margin-left: 20px;
+        }
+        header .highlight, header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #e8491d;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        #main {
+            flex: 2;
+            min-width: 0;
+        }
+        #sidebar {
+            flex: 1;
+            background: #f4f4f4;
+            color: #333;
+            padding: 20px;
+            margin-left: 20px;
+            border-radius: 5px;
+            min-width: 250px;
+        }
+        .post {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        
+        .post img {
+            
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        
+        .post-meta {
+            background: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .post-meta span {
+            margin-right: 10px;
+        }
+        .comments {
+            margin-top: 20px;
+        }
+        .comment {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+        }
+        .social-share {
+            margin-top: 20px;
+        }
+        .social-share a {
+            margin-right: 10px;
+            color: #333;
+            font-size: 20px;
+        }
+        footer {
+            padding: 20px 0;
+            margin-top: 20px;
+            color: #ffffff;
+            background-color: #e8491d;
+            text-align: center;
+        }
+        #commentForm {
+            margin-top: 20px;
+        }
+        #commentForm textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #commentForm button {
+            background-color: #e8491d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #commentForm button:hover {
+            background-color: #d13d0f;
+        }
+        .related-posts {
+            margin-top: 20px;
+        }
+        .related-post {
+            margin-bottom: 10px;
+        }
+        .related-post a {
+            color: #333;
+            text-decoration: none;
+        }
+        .related-post a:hover {
+            color: #e8491d;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header nav {
+                margin-top: 10px;
+            }
+            header nav ul {
+                flex-direction: column;
+            }
+            header nav ul li {
+                margin: 10px 0 0 0;
+            }
+            .content-wrapper {
+                flex-direction: column;
+            }
+            #main, #sidebar {
+                width: 100%;
+            }
+            #sidebar {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+            .post-meta span {
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Tutoring Intermediary Website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="tutors.html">Tutors</a></li>
-                <li><a href="user.html">User System</a></li>
-                <li><a href="payment.html">Payment</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div id="branding">
+                <h1><i class="fas fa-blog"></i> <span class="highlight">My</span> Awesome Blog</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section id="introduction" class="colorful-bg">
-            <h2>Welcome to Our Tutoring Service</h2>
-            <p>Your one-stop solution for finding the best tutors and courses.</p>
-        </section>
-        <section id="search" class="gradient-bg">
-            <h2>Find Your Tutor or Course</h2>
-            <input type="text" id="search-input" placeholder="Search by subject, grade, location...">
-            <button id="search-button" class="blue-btn">Search</button>
-        </section>
-        <section id="popular" class="pattern-bg">
-            <h2>Popular Courses and Tutors</h2>
-            <div class="card">
-                <div class="card-content">
-                    <h3>Mathematics for Grade 10</h3>
-                    <p>by John Doe</p>
-                </div>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div id="main">
+                <article class="post">
+                    <h2>The Future of Artificial Intelligence</h2>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar-alt"></i> June 22, 2024</span>
+                        <span><i class="far fa-user"></i> John Doe</span>
+                        <span><i class="far fa-folder"></i> Technology</span>
+                    </div>
+                    <img src="https://axenehp.com/wp-content/uploads/2019/02/20190225_header.jpg" alt="AI concept image">
+                    <p>Artificial Intelligence (AI) is rapidly evolving, transforming industries and reshaping our daily lives. From self-driving cars to advanced medical diagnostics, AI is pushing the boundaries of what's possible...</p>
+                    <p>As we look to the future, ethical considerations and responsible development will be crucial in harnessing the full potential of AI while mitigating potential risks...</p>
+                    
+                    <div class="social-share">
+                        <a href="#" onclick="sharePost('facebook')"><i class="fab fa-facebook"></i></a>
+                        <a href="#" onclick="sharePost('twitter')"><i class="fab fa-twitter"></i></a>
+                        <a href="#" onclick="sharePost('linkedin')"><i class="fab fa-linkedin"></i></a>
+                    </div>
+
+                    <div class="comments">
+                        <h3>Comments</h3>
+                        <div id="commentList">
+                            <!-- Comments will be dynamically added here -->
+                        </div>
+                        <form id="commentForm">
+                            <textarea id="commentText" placeholder="Leave a comment" required></textarea>
+                            <button type="submit">Post Comment</button>
+                        </form>
+                    </div>
+                </article>
             </div>
-            <div class="card">
-                <div class="card-content">
-                    <h3>Physics for Grade 12</h3>
-                    <p>by Jane Smith</p>
+
+            <aside id="sidebar">
+                <div class="related-posts">
+                    <h3>Related Posts</h3>
+                    <div class="related-post">
+                        <a href="#">Machine Learning Basics</a>
+                    </div>
+                    <div class="related-post">
+                        <a href="#">Ethics in AI Development</a>
+                    </div>
+                    <div class="related-post">
+                        <a href="#">AI in Healthcare</a>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </aside>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2024 Tutoring Intermediary Website. All rights reserved.</p>
+        <p>My Awesome Blog &copy; 2024</p>
     </footer>
+
+    <script>
+        // Function to handle social media sharing
+        function sharePost(platform) {
+            const postUrl = encodeURIComponent(window.location.href);
+            const postTitle = encodeURIComponent(document.title);
+            let shareUrl;
+
+            switch(platform) {
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${postUrl}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?url=${postUrl}&text=${postTitle}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${postUrl}&title=${postTitle}`;
+                    break;
+            }
+
+            window.open(shareUrl, '_blank');
+        }
+
+        // Function to add a new comment
+        function addComment(text) {
+            const commentList = document.getElementById('commentList');
+            const newComment = document.createElement('div');
+            newComment.className = 'comment';
+            newComment.innerHTML = `
+                <p>${text}</p>
+                <small>Posted on ${new Date().toLocaleString()}</small>
+            `;
+            commentList.appendChild(newComment);
+        }
+
+        // Event listener for comment form submission
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const commentText = document.getElementById('commentText').value;
+            if (commentText.trim() !== '') {
+                addComment(commentText);
+                document.getElementById('commentText').value = '';
+            }
+        });
+
+        // Simulate loading existing comments
+        addComment("Great article! I'm excited to see how AI will shape our future.");
+        addComment("Interesting points about ethical considerations. We need to be cautious as we advance AI technologies.");
+    </script>
 </body>
 </html>
-
-
