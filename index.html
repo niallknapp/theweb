@@ -162,20 +162,18 @@
         }
 
         async function fetchApiResponse(message) {
-            const response = await fetch('https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium', {
+            const response = await fetch('https://api.ollama.com/v1/chat', {
                 method: 'POST',
                 headers: {
-                    'Authorization': 'Bearer http://host.docker.internal:11434',  // 替换为你的Hugging Face API密钥
+                    'Authorization': 'Bearer http://host.docker.internal:11434',  // 替换为你的Ollama API密钥
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    inputs: {
-                        text: message
-                    }
+                    query: message
                 })
             });
             const data = await response.json();
-            return data.generated_text;
+            return data.reply;
         }
 
         async function sendMessage() {
